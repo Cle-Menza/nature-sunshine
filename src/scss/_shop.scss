@@ -1,0 +1,222 @@
+.shop {
+  padding-top: $gutter * 2;
+  padding-bottom: $gutter * 2;
+
+  &-categories {
+    margin-bottom: $gutter * 2;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        flex: 1 0 11%;
+        max-width: 11%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 2px;
+          background-color: $accent-color;
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        &.active {
+          a {
+            color: $accent-color;
+          }
+
+          &::after {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+
+      a {
+        color: $dark-text;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 14px;
+        text-align: center;
+        display: block;
+        padding: $gutter / 2;
+        line-height: 18px;
+
+        &:hover {
+          color: $accent-color;
+        }
+      }
+    }
+  }
+
+  &-main {
+    display: flex;
+  }
+
+  &-filter {
+    flex: 1 0 23%;
+    min-width: 240px;
+    max-width: 300px;
+    margin-right: $gutter;
+    background-color: $light-color;
+    border-radius: $border-radius;
+    padding: $gutter;
+
+    &__group {
+      margin-bottom: $gutter;
+      padding-bottom: $gutter;
+      border-bottom: 1px solid lighten($dark-text, 50%);
+
+      &-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: $gutter;
+        cursor: pointer;
+
+        &::after {
+          content: attr(data-filter-collapse);
+        }
+
+        h3 {
+          color: $accent-text;
+          text-transform: uppercase;
+          font-weight: 800;
+          font-size: 1rem;
+          margin-bottom: 0;
+        }
+      }
+
+      &-list {
+        margin-left: $gutter;
+        margin-bottom: $gutter;
+
+        input {
+          display: none;
+        }
+
+        label {
+          color: $accent-text;
+          font-size: 14px;
+        }
+      }
+
+      &-reset {
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+          background-color: transparent;
+          border: 0;
+          cursor: pointer;
+          color: $dark-text;
+        }
+      }
+    }
+  }
+
+  &-products {
+    flex-grow: 1;
+
+    &__before {
+      display: flex;
+      align-items: center;
+      color: $accent-text;
+    }
+
+    &__count {
+      font-size: 12px;
+      line-height: 1;
+      margin-left: auto;
+    }
+
+    &__sortby {
+      margin-left: $gutter;
+
+      select {
+        display: table;
+        outline: none;
+        width: 100%;
+        font-weight: 800;
+        font-size: 14px;
+        padding: $gutter / 2;
+        border: 0;
+        border-radius: $border-radius;
+        text-overflow: ellipsis;
+        background: $light-color;
+        color: $accent-text;
+      }
+    }
+
+    &__after {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      color: $accent-text;
+    }
+
+    &__pagination {
+      ul {
+        display: flex;
+        align-items: center;
+
+        li {
+          &.active,
+          &:hover {
+            span,
+            a {
+              border-color: $accent-text;
+            }
+          }
+        }
+
+        span,
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 30px;
+          height: 30px;
+          border: 1px solid transparent;
+          color: $accent-text;
+          margin: $gutter / 4;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &__per-page {
+      display: flex;
+      align-items: center;
+
+      input {
+        display: none;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border: 1px solid transparent;
+        margin: $gutter / 4;
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+          border-color: $accent-text;
+        }
+      }
+    }
+  }
+}

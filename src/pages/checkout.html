@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+
+{% set transparent = "no-transparent" %}
+{% set hasHero = "no-hero" %}
+{% import "macro/form.html" as form %}
+
+{% block content %}
+
+<div class="checkout">
+  <div class="container">
+    <div class="checkout__main">
+      <div class="checkout__fields">
+        <h2>Checkout</h2>
+        {{
+          form.template({
+            "action": "/checkout.html",
+            "method": "POST",
+            "wrapper": true,
+            "row": [
+              {
+                "class": "form-row-first",
+                "type": "text",
+                "id": "checkout-first-name",
+                "label": "First name",
+                "required": true
+              },
+              {
+                "class": "form-row-last",
+                "type": "text",
+                "id": "checkout-last-name",
+                "label": "Last name",
+                "required": true
+              },
+              {
+                "class": "form-row-first",
+                "type": "select",
+                "option": ["Chișinău", "Bălți", "Tiraspol", "Bender", "Rîbnița"],
+                "id": "checkout-state",
+                "label": "State"
+              },
+              {
+                "class": "form-row-last",
+                "type": "text",
+                "id": "checkout-city",
+                "label": "City"
+              },
+              {
+                "class": "",
+                "type": "text",
+                "id": "checkout-address",
+                "label": "Address"
+              },
+              {
+                "class": "",
+                "type": "tel",
+                "id": "checkout-phone",
+                "label": "Phone",
+                "required": true
+              },
+              {
+                "class": "",
+                "type": "email",
+                "id": "checkout-email",
+                "label": "Email",
+                "required": true
+              },
+              {
+                "class": "",
+                "type": "textarea",
+                "id": "checkout-comment",
+                "label": "Comments"
+              }
+            ]
+          })
+        }}
+      </div>
+      <div class="checkout__review">
+        <h2>Order Summary</h2>
+        <table class="shop_table woocommerce-checkout-review-order-table">
+          <tbody>
+            {% set subtotal = 0 %}
+            {% for product in products %}
+            <tr class="cart_item">
+              <td class="product-thumbnails">
+                <img src="{{ product.img }}" alt="{{ product.title }}" title="{{ product.title }}">
+              </td>
+              <td class="product-name">
+                <div class="description">
+                  <a href="/product.html" class="title">
+                    {{ product.title }}
+                  </a>
+                  <span class="sku">
+                    No. 1514
+                  </span>
+                </div>
+              </td>
+              <td class="product-quantity">
+                <span>1</span>
+              </td>
+              <td class="product-total">
+                <span class="price">{{ product.price }} $</span>
+              </td>
+            </tr>
+            {% set subtotal = subtotal + product.price | float %}
+            {% endfor %}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4">
+                <div class="order-coupon">
+                  <input type="text" name="coupon_code" class="input-text" id="coupon_code" value=""
+                    placeholder="Coupon code">
+                  <button type="submit" class="button" name="apply_coupon" value="Apply coupon">Apply coupon</button>
+                </div>
+              </td>
+            </tr>
+            <tr class="cart-subtotal">
+              <th colspan="2">Subtotal</th>
+              <td colspan="2"><span>{{ subtotal }} $</span></td>
+            </tr>
+            <tr class="woocommerce-shipping-totals shipping">
+              <th colspan="2">Shipping</th>
+              <td colspan="2">
+                <ul id="shipping_method" class="woocommerce-shipping-methods">
+                  <li>
+                    <label>Local pickup</label>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr class="order-total">
+              <th colspan="2">Total</th>
+              <td colspan="2"><span>{{ subtotal }} $</span></td>
+            </tr>
+          </tfoot>
+        </table>
+        <div class="payment">
+          <ul class="methods">
+            <li class="nsp-label">
+              <input id="payment_method_cod" type="radio" name="payment_method" value="cod" checked>
+              <label for="payment_method_cod">Pay after shipping</label>
+            </li>
+            <li class="nsp-label">
+              <input id="payment_method_online" type="radio" name="payment_method" value="online">
+              <label for="payment_method_online">Online payment</label>
+            </li>
+          </ul>
+          <div class="place-order">
+            <button type="submit">Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content%}

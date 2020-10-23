@@ -1,0 +1,157 @@
+%col {
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+}
+
+.main-footer {
+  padding: ($gutter * 5) 0 ($gutter * 8);
+  background-position: center 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../img/footer-bg.jpg);
+
+  hr {
+    margin: ($gutter * 2) 0;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    margin-left: -$gutter / 2;
+    margin-right: -$gutter / 2;
+    margin-bottom: $gutter * 2;
+  }
+
+  &__col {
+    flex: 0 0 18%;
+    max-width: 18%;
+
+    @extend %col;
+  }
+
+  &__brand {
+    flex: 0 0 28%;
+    max-width: 28%;
+  }
+
+  &__copyright {
+    flex: 0 0 40%;
+    max-width: 40%;
+
+    @extend %col;
+
+    font-size: 14px;
+  }
+
+  &__menu {
+    flex: 0 0 60%;
+    max-width: 60%;
+
+    @extend %col;
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      li {
+        &:last-child {
+          a {
+            border-right: 0;
+          }
+        }
+      }
+
+      a {
+        color: $dark-text;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 0 $gutter;
+        font-size: 14px;
+        border-right: 1px solid $dark-text;
+
+        &:hover {
+          color: $accent-text;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__approvals {
+    @extend %col;
+
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    a {
+      margin: $gutter;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__logo {
+    margin-bottom: $gutter;
+
+    a {
+      display: block;
+      color: $darken-text;
+
+      &:hover {
+        color: $accent-text;
+      }
+    }
+
+    svg {
+      width: 180px;
+      height: auto;
+    }
+  }
+
+  &__links {
+    h4 {
+      color: $accent-text;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-family: $main-font;
+      font-weight: 600;
+      margin-bottom: $gutter;
+    }
+
+    ul {
+      margin-bottom: $gutter * 2;
+    }
+
+    a {
+      color: $dark-text;
+      text-decoration: none;
+      text-transform: capitalize;
+      font-size: 14px;
+
+      &:hover {
+        color: $accent-text;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+
+    a {
+      font-size: 24px;
+      color: lighten($dark-text, 25%);
+      text-decoration: none;
+      padding: $gutter / 2;
+
+      &:hover {
+        color: $accent-text;
+      }
+    }
+  }
+}

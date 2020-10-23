@@ -1,0 +1,18 @@
+#modal-user {
+  h6 {
+    text-transform: uppercase;
+    color: $accent-text;
+  }
+
+  form {
+    margin-bottom: $gutter;
+
+    button {
+      @extend %btn;
+    }
+
+    label {
+      margin-bottom: $gutter / 4;
+    }
+  }
+}

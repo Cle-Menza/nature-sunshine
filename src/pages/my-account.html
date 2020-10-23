@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% set transparent = "no-transparent" %}
+{% set hasHero = "no-hero" %}
+{% block content %}
+{% import "macro/form.html" as form %}
+
+<section class="my-account">
+  <div class="container">
+    <div class="my-account__main">
+      <div class="my-account__login">
+        <h2>Login</h2>
+        {{
+          form.template({
+            "action": "/my-account.html",
+            "method": "post",
+            "submit": "Log in",
+            "forgot": true,
+            "row": [
+              {
+                "id": "login-username",
+                "type": "text",
+                "label": "Username or Email",
+                "class": "login-username"
+              },
+              {
+                "id": "login-password",
+                "type": "password",
+                "label": "Password",
+                "class": "login-password"
+              },
+              {
+                "id": "login-remember",
+                "type": "checkbox",
+                "label": "Remember me",
+                "class": "login-remember nsp-label"
+              }
+            ]
+          })
+        }}
+      </div>
+      <div class="my-account__register">
+        <h2>Register</h2>
+        {{
+          form.template({
+            "action": "/my-account.html",
+            "method": "post",
+            "submit": "Register",
+            "row": [
+              {
+                "id": "register-username",
+                "type": "text",
+                "label": "Username",
+                "class": "register-username"
+              },
+              {
+                "id": "register-firstname",
+                "type": "text",
+                "label": "First name",
+                "class": "register-firstname"
+              },
+              {
+                "id": "register-lastname",
+                "type": "text",
+                "label": "Last name",
+                "class": "register-lastname"
+              },
+              {
+                "id": "register-email",
+                "type": "email",
+                "label": "Email",
+                "class": "register-email"
+              },
+              {
+                "id": "register-phone",
+                "type": "tel",
+                "label": "Phone",
+                "class": "register-phone"
+              },
+              {
+                "id": "register-password",
+                "type": "password",
+                "label": "Password",
+                "class": "register-password"
+              }
+            ]
+          })
+        }}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,54 @@
+{% macro template(product={}, topics=[]) %}
+<div class="product__container">
+  <a href="/product.html" class="product__link">
+    <div class="product__badge">
+      {% if product.new %}
+      <span class="new"><b>New</b></span>
+      {% endif %}
+      {% if product.best %}
+      <span class="best"><b>Best sellers</b></span>
+      {% endif %}
+      {% if product.sale %}
+      <span class="sale"><b>Sale</b></span>
+      {% endif %}
+    </div>
+    <ul class="product__categories">
+      {% for i in range(0, [1,2,3,4,5] | random) %}
+        {% set topicsLength = topics | length %}
+        {% set randomIndex = range(1, topicsLength) | random %}
+        <li>
+          <svg class="nsp-icon">
+            <use xlink:href="{{ topics[randomIndex].svgUse }}"></use>
+          </svg>
+          <span>{{ topics[randomIndex].title }}</span>
+        </li>
+      {% endfor %}
+
+    </ul>
+    <div class="product__image">
+      <img src="{{ product.img }}" alt="{{ product.title }}" loading="lazy">
+    </div>
+    <h6 class="product__title">
+      {{ product.title }}
+    </h6>
+    <hr class="product__divider"></hr>
+    <div class="product__price">
+      {% if product.sale %}
+        <del>${{ product.price }}</del>
+        <ins>${{ product.salePrice }}</ins>
+      {% else %}
+        <span>${{ product.price }}</span>
+      {% endif %}
+    </div>
+    <div class="product__additional-price">
+      <span>${{ product.price }}</span><span> Premium Member </span>
+    </div>
+  </a>
+  <div class="product__cta">
+    <a href="/product.html" class="product__more">Learn more</a>
+    <div class="product__btn">
+      <a href="/cart.html" class="add_to_cart_button">Add to cart</a>
+    </div>
+  </div>
+</div>
+{% endmacro %}

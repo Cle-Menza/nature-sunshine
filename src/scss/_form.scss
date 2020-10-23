@@ -1,0 +1,120 @@
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=tel],
+select,
+textarea {
+  border-radius: $border-radius;
+  border: 1px solid $dark-text;
+  padding: ($gutter / 2) $gutter;
+  font-size: 16px;
+  line-height: 18px;
+  color: $darken-text;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+label {
+  font-size: 13px;
+
+  .required {
+    color: red;
+    font-weight: 400;
+    font-size: 0.8em;
+  }
+}
+
+.form__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  .form-row {
+    flex: 1 0 100%;
+
+    &-first {
+      flex-basis: 48%;
+      margin-right: 4%;
+    }
+
+    &-last {
+      flex-basis: 48%;
+    }
+  }
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $gutter;
+
+  label {
+    order: -1;
+  }
+
+  input {
+    &:invalid {
+      border-color: $fail-color;
+    }
+  }
+
+  &.forgot-password {
+    a {
+      font-size: 12px;
+      color: $accent-text;
+      font-weight: 400;
+      font-style: italic;
+    }
+  }
+}
+
+.nsp-label {
+  input {
+    display: none;
+  }
+
+  input[type="checkbox"] ~ label {
+    &::before {
+      border-radius: $border-radius;
+    }
+  }
+
+  input[type="radio"] ~ label {
+    &::before {
+      border-radius: 50%;
+    }
+  }
+
+  label {
+    position: relative;
+    padding-left: 2.5em;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      border: 1px solid $dark-text;
+      width: 1.25em;
+      height: 1.25em;
+      transform: translateY(-50%);
+      background-color: #fff;
+    }
+
+    &:hover {
+      &::before {
+        background-color: darken(#fff, 5%);
+      }
+    }
+  }
+
+  input:checked + label::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23fff'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 13l4 4L19 7' /%3E%3C/svg%3E");
+    background-color: $ok-color;
+    border-color: $ok-color;
+  }
+}

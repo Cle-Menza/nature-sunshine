@@ -1,0 +1,21 @@
+// .form-row:not(.nsp-label)
+//   position: relative
+//   background-color: #fff
+//   label
+//     position: absolute
+//     left: 20px
+//     top: 50%
+//     height: 20px
+//     line-height: 20px
+//     margin-top: -10px
+//     transition: all 0.2s ease-in-out
+//     cursor: pointer
+//     font-size: 1em
+//     padding-left: 5px
+//     padding-right: 5px
+//   input:focus + label
+//     top: 0
+//     background-color: inherit
+//     pointer-events: none
+//     font-size: 0.8em
+//     color: $accent-text

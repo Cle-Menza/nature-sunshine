@@ -1,0 +1,345 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% import "macro/hero.html" as hero %}
+{{ 
+  hero.template({
+    "title": "Unlock the Power of Herbs",
+    "subTitle": "For Results You Can Feel.",
+    "promo": "Shown here: Echinacea",
+    "text": "Our echinacea provides industry leading immune support.",
+    "btn": "Buy now"
+  }) 
+}}
+
+<section class="best-sellers">
+  <div class="container">
+    <div class="best-sellers__row">
+      <div class="best-sellers__img">
+        <img src="./assets/img/best-sellers.jpg" alt="">
+      </div>
+      <div class="best-sellers__text">
+        <h2 class="nsp-title-dark">Nature Holds the Answers, We Bottle Them.</h2>
+        <p>
+          Nature’s Sunshine changed the world as the first company to put herbs into easy-to-take capsules. For almost
+          50 years we’ve brought the healing power of herbs to millions of people across America, and with over 600
+          products we have something for everyone, starting with you.
+        </p>
+        <a href="/shop.html" class="nsp-btn">Shop Best Sellers</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="half-section">
+  <div class="half-section__row">
+    <div class="half-section__img">
+      <img src="./assets/img/born-img.jpg" alt="">
+    </div>
+
+    <div class="half-section__content">
+      <div class="half-section__text">
+        <h2 class="nsp-title-white">Born in the Wild, Proven in the Lab</h2>
+        <p>
+          Delivering the results you expect is a strenuous process. But we wouldn’t have it any other way. We travel the
+          world seeking the earth’s most pure and potent ingredients and use more than 600 tests to ensure each one of
+          our herbal formulas is ready to do exactly what it’s supposed to do.
+        </p>
+        <img src="./assets/img/born-video.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="solutions">
+  <div class="container">
+    <div class="solutions__row">
+      <h2 class="nsp-title-dark">
+        600 Natural Solutions, All Under One Cap!
+      </h2>
+      <div class="solutions__filter">
+        <div class="solutions__filter-item">
+          <div class="solutions__tab-title" data-tab="health-tab">
+            <h6>SHOP HEALTH TOPICS
+            </h6>
+          </div>
+        </div>
+        <div class="solutions__filter-item">
+          <div class="solutions__tab-title" data-tab="categories-tab">
+            <h6>SHOP CATEGORIES
+            </h6>
+          </div>
+        </div>
+        <div class="solutions__filter-item">
+          <div class="solutions__search">
+            <form action="/" method="GET">
+              <input type="text" name="s" placeholder="Search Product or Ingredient">
+              <button type="submit"></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="solutions__tabs">
+        <div class="solutions__tab" id="health-tab">
+          <ul>
+          {% for item in topics %}
+            <li>
+              <a href="/shop.html">
+                <svg class="nsp-icon">
+                  <use xlink:href="{{ item.svgUse }}"></use>
+                </svg>
+                <span>{{ item.title}}</span>
+              </a>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+        <div class="solutions__tab" id="categories-tab">
+          <ul>
+          {% for cat in categories %}
+            <li><a href="/shop.html">{{ cat.title }}</a></li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="favorites">
+  <div class="container">
+    <h2>OUR HERBALISTS’ FAVORITES</h2>
+    <div class="splide"
+      data-splide='{ "type": "loop", "perPage": 3, "breakpoints": { "990": {"perPage": 2}, "560": {"perPage": 1} } }'>
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="favorites__item">
+              <div class="favorites__item-bg">
+                <img src="./assets/img/favorite-bg1.jpg" alt="Eleven Elevated">
+                <img src="./assets/img/favorite-bg1-hover.jpg" alt="Eleven Elevated">
+              </div>
+              <div class="favorites__item-img">
+                <img src="./assets/img/favorite-img1.png" alt="Eleven Elevated">
+              </div>
+              <h4 class="favorites__item-title">
+                <a href="/shop.html">Eleven Elevated</a>
+              </h4>
+              <p class="favorites__item-text">
+                Broad spectrum probiotic blend. Repopulate your gut bacteria.
+              </p>
+              <div class="favorites__item-btn">
+                <a href="/shop.html" class="nsp-btn">Learn more</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="three-p">
+  <div class="three-p__item" style="background-image: url(./assets/img/pure.jpg)">
+    <h3>Pure</h3>
+    <p>Clean and natural ingredients inspire everything we do. Our rigorous testing and award-winning manufacturing
+      allow us to achieve the highest levels of purity. </p>
+    <a href="/shop.html"></a>
+  </div>
+  <div class="three-p__item" style="background-image: url(./assets/img/potent.jpg)">
+    <h3>Potent</h3>
+    <p>Proprietary formulas and groudbreaking research creates the most potent and reliable formulations on the market.
+    </p>
+    <a href="/shop.html"></a>
+  </div>
+  <div class="three-p__item" style="background-image: url(./assets/img/proven.jpg)">
+    <h3>Proven</h3>
+    <p>Innovative science with direct input from thousands of herbalists, natural healers, nutritionists, and health
+      practitioners allows us to deliver the most powerful and effective products on the market. </p>
+    <a href="/shop.html"></a>
+  </div>
+</section>
+
+<section class="bg-section bg-section--right bg-section--dark" style="background-image: url(./assets/img/biker.jpg)">
+  <div class="container">
+    <div class="bg-section__text">
+      <h2 class="nsp-title-dark">Healthy Cholesterol Patented!</h2>
+      <p>
+        Cardiox LDL offers a patented mix blend of Citrus bergamia extract and proprietary antioxidants to keep your LDL
+        cholesterol healthy naturally.
+      </p>
+      <a href="/shop.html" class="nsp-btn-primary">SHOP HEART HEALTH</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-section bg-section--left bg-section--light bg-section--overlay"
+  style="background-image: url(./assets/img/probiotics.jpg)">
+  <div class="container">
+    <div class="bg-section__text">
+      <h2 class="nsp-title-white">Why Do Our Probiotics Provide the Best Gut Health?</h2>
+      <p>
+        Unlike other probiotics, our products use the most researched probiotic strains in precise doses! We also use a
+        proprietary capsule designed to release beneficial bacteria when and where they do the most good.
+      </p>
+      <a href="/shop.html" class="nsp-btn-primary">SHOP PROBIOTICS</a>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="container">
+    <h2 class="nsp-title-dark">
+      What Our Customers are Saying…
+    </h2>
+    <div class="splide" data-splide='{ "type": "slide" }'>
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="reviews__item">
+              <div class="reviews__img">
+                <img src="./assets/img/tumeric.jpg" alt="Tumeric">
+              </div>
+              <div class="reviews__text">
+                <h5><a href="/shop.html">I Love Nature's Tumeric</a></h5>
+                <p>“The color is exciting and I love to use this herb to season my soups and my husband loves the way it
+                  makes his skin look good.”</p>
+                <p class="reviews__author">
+                  — CAROLINE V.
+                </p>
+                <div class="reviews__btn">
+                  <a href="/shop.html" class="nsp-btn">Shop tumeric</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="reviews__item">
+              <div class="reviews__img">
+                <img src="./assets/img/collagen.jpg" alt="Collagen">
+              </div>
+              <div class="reviews__text">
+                <h5><a href="/shop.html">Discover the Power of Collagen</a></h5>
+                <p>“Love the taste and really see a difference in my skin and hair will be forever using this…”</p>
+                <p class="reviews__author">
+                  —KESLEY M.
+                </p>
+                <div class="reviews__btn">
+                  <a href="/shop.html" class="nsp-btn">Shop Collagen</a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="half-section">
+  <div class="half-section__row">
+    <div class="half-section__img">
+      <img src="./assets/img/impact-girl.jpg" alt="">
+    </div>
+
+    <div class="half-section__content">
+      <div class="half-section__text">
+        <h2 class="nsp-title-white">Sharing the Healing Power of Nature</h2>
+        <p>
+          Our passion for sharing the healing power of nature lies at the heart of everything we do. The Impact
+          Foundation is the charitable arm of Nature’s Sunshine Products. Since 1972, when Nature’s Sunshine became the
+          first company to encapsulate herbs, hundreds of thousands have joined us in our cause.
+        </p>
+        <img src="./assets/img/impact.png" alt="Impact" width="202">
+        <div class="half-section__btn">
+          <a href="/shop.html" class="nsp-btn">LEARN MORE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="container">
+    <div class="newsletter__row">
+      <h2 class="nsp-title-dark">
+        Sign up to Save
+      </h2>
+      <p>Have you signed up for our newsletter? Get the scoop on sales, your favorite herbs, and our latest news.</p>
+      <form action="/" method="post">
+        <input type="email" placeholder="Email">
+        <button type="submit" class="nsp-btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="bg-section bg-section--left bg-section--light bg-section--overlay"
+  style="background-image: url(./assets/img/premium-member.jpg)">
+  <div class="container">
+    <div class="bg-section__text">
+      <h2 class="nsp-title-white">Become a Premium Member</h2>
+      <img src="./assets/img/reward-icons.png" alt="" width="350">
+      <p>
+        FOR A $40 ANNUAL FEE, PREMIUM MEMBERS RECEIVE:
+
+        20% Savings on All Regular Price Items<br>
+        Additional 10% Savings on Sale Items<br>
+        Free Shipping for 1 Order Each Month<br>
+        Exclusive Premium Deals and Promotions<br>
+        Early Access to Sale and Clearance Events<br>
+      </p>
+      <a href="/shop.html" class="nsp-btn-primary">Join now</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 5% 0;">
+  <div class="container">
+    <h2 class="nsp-title-dark">Be a Force of Nature</h2>
+    <p>It’s never been in our nature to settle.</p>
+    <img src="./assets/img/terrence.jpg" alt="" width="422" style="float: right; padding-left: 20px; margin-bottom: 20px;">
+    <p>For almost 50 years, we’ve found a curious pleasure in doing things the hard way: traveling to the ends of the
+      Earth in search of the rarest, purest, and most potent ingredients; following the most rigorous quality standards
+      that use a mind-numbing array of tests and procedures that our peers say aren’t necessary, but that we believe are
+      absolutely required; and working tirelessly to build one of the most powerful networks of herbalists,
+      nutritionists, naturopaths, natural healers, scientists, and researchers in the world. The results speak for
+      themselves and have helped us create one of the largest, most effective collections of herbal and natural
+      supplements available today.</p>
+
+    <p>Maybe we’re a bit obsessed, but let’s just be polite and call it “passion”.</p>
+
+    <p>Of course, at a time when we’re all facing so many unprecedented challenges, maybe what we need is a little more
+      passion. Maybe what we need is something to unlock the infinite potential that lies within each of us. Maybe we
+      need to breakout, express our freedom, spread our wings, flex our muscles, open our minds, and recapture our
+      adventurous spirit!</p>
+
+    <p>Connecting with nature is a crucial step in the right direction. The beauty, power, and restorative properties of
+      nature have the ability to unlock our potential. When we embrace the power of nature, we can go places —
+      physically, mentally and emotionally — that we’d never be able to otherwise. There simply are no limits when we
+      tap into the power of nature.</p>
+
+    <p>As the first company to encapsulate herbs, Nature’s Sunshine has always felt a strong calling to share the
+      healing power of nature with as many people as possible. It’s a calling that inspires us to hone our craft – from
+      our farmers, herbalists, and health practitioners, to our scientists and award-winning manufacturing and quality
+      teams, everyone at Nature’s Sunshine truly embodies what it means to be a force of nature. Our company was founded
+      to serve you. To help you reach your goals. To help you recapture your adventurous spirit. To help you be a force
+      of nature. You can be sure that we’ll continue our dedication to that cause.</p>
+    <img src="./assets/img/terrence-sig.jpg" alt="" style="padding-top: 16px;" width="300">
+    <p>
+      Terrence Moorehead<br>
+      Chief Executive Officer<br>
+      Nature’s Sunshine<br>
+    </p>
+  </div>
+</section>
+
+<div class="pre-footer">
+  <div class="container">
+    <div class="pre-footer__row">
+      <img src="./assets/img/experts.gif" alt="">
+    </div>
+  </div>
+</div>
+
+{% endblock %}

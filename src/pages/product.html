@@ -1,0 +1,191 @@
+{% extends "layout.html" %}
+
+{% set transparent = "no-transparent" %}
+{% set hasHero = "no-hero" %}
+{% 
+  set productImgs = [
+  './assets/img/product-flax.png',
+  './assets/img/product-flax2.png',
+  './assets/img/product-flax3.png',
+  './assets/img/product-flax.png',
+  './assets/img/product-flax2.png',
+  './assets/img/product-flax3.png'
+  ] 
+%}
+
+{% block content %}
+
+    <!-- begin single-product -->
+    <div class="single-product">
+      <!-- begin container -->
+      <div class="container">
+        <!-- begin single-product__main -->
+        <div class="single-product__main">
+          <!-- begin single-product__gallery -->
+          <div class="single-product__gallery">
+            <!-- begin image -->
+            <div class="splide" data-product-slider>
+              <div class="splide__track">
+                <ul class="splide__list">
+                  {% for images in productImgs %}
+                  <li class="splide__slide">
+                    <img data-zoomable src="{{ images }}">
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+            <!-- end image -->
+            <!-- begin thumbnails -->
+            <div class="splide" data-product-thumbnails>
+              <div class="splide__track">
+                <ul class="splide__list">
+                  {% for images in productImgs %}
+                  <li class="splide__slide">
+                    <img src="{{ images }}">
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+            <!-- end thumbnails -->
+          </div>
+          <!-- end single-product__gallery -->
+          <!-- begin single-product__summary -->
+          <div class="single-product__summary">
+            <h1>Flax Seed Oil w/ Lignans</h1>
+            <div class="single-product__rating">
+              <div class="star-rating">
+                <span style="width:80%"></span>
+              </div>
+              <a href="#reviews">0 Reviews</a>
+            </div>
+            <ul class="single-product__categories">
+              {% for i in range(0, 5) %}
+                {% set topicsLength = topics | length %}
+                {% set randomIndex = range(1, topicsLength) | random %}
+                <li>
+                  <svg class="nsp-icon">
+                    <use xlink:href="{{ topics[randomIndex].svgUse }}"></use>
+                  </svg>
+                  <span>{{ topics[randomIndex].title }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+            <div class="single-product__price">
+              <span>$19.95</span>
+            </div>
+
+            <div class="single-product__stock">
+              <div class="sku">
+                Stock# 1583
+              </div>
+              <div class="stock">
+                In Stock
+              </div>
+            </div>
+            <div class="single-product__short-desc">
+              <ul>
+                <li>Vegetable Omega 3, 6 & 9 fatty acids.</li>
+                <li>Precursor to prostaglandins.</li>
+                <li>Immune system support.</li>
+              </ul>
+            </div>
+            <div class="single-product__cta">
+              <div class="qty">
+                <label>
+                  <span>Quantity:</span>
+                  <input type="text" value="1">
+                </label>
+              </div>
+              <div class="single-product__btn">
+                <a href="/cart.html" class="add_to_cart_button nsp-btn-primary">Add to cart</a>
+              </div>
+            </div>
+
+          </div>
+          <!-- end single-product__summary -->
+        </div>
+        <!-- end single-product__main -->
+        <!-- begin single-product__description -->
+        <section class="single-product__description">
+          <div class="row">
+            <div class="column">
+              <div class="image-bg" style="background-image: url(./assets/img/flower-bg.jpg);"></div>
+            </div>
+            <div class="column">
+              <h3>How It Works</h3>
+              <p>
+                Several scientific studies show that consumption of omega-3 essential fatty acids (EFAs) can benefit good health. Flax Seed Oil is a rich source of EFAs, including linoleic acid. Fatty acids are termed “essential” because the body cannot manufacture them. Flax seed oil is a convenient pant-source alternative to fish oils. The body produces prostaglandins— precursors to hormones and other compounds. Some of these initiate beneficial reactions while others produce negative effects. An improper balance of EFAs in the diet can lead to increased production of the “bad” prostaglandins. Flax Seed Oil with Lignans provides the ideal ratio of omega-3, omega-6 and omega-9 EFAs required to maintain the necessary balance between good and bad prostaglandins. Lignans are phytoestrogens that provide powerful benefits, including boosting the immune system and maintaining hormone balance.
+              </p>
+              <h4>Recommended Use</h4>
+              <p>
+                Take 1–2 softgels with a meal three times daily.
+              </p>
+              <h4>
+                Ingredients
+              </h4>
+              <p>
+                Flax seed oil and lignans.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- end single-product__description -->
+        <!-- begin single-product__reviews -->
+        <div id="reviews" class="single-product__reviews">
+          <h2>Reviews</h2>
+          <div class="comment-form">
+            <div class="no-reviews">
+              There are no reviews yet.
+            </div>
+            <div class="comment-respond">
+              <div class="comment-reply-title">
+                Be the first to review “Flax Seed Oil w/ Lignans” 
+              </div>
+              <form action="#">
+                <div class="form-row">
+                  <label for="comment">Your comment</label>
+                  <textarea name="comment" id="comment" required></textarea>
+                </div>
+                <div class="form-row">
+                  <label for="comment-name">Your name</label>
+                  <input type="text" name="comment-name" id="comment-name">
+                </div>
+                <div class="form-row">
+                  <label for="comment-email">Your email</label>
+                  <input type="email" name="comment-email" id="comment-email">
+                </div>
+                <div class="form-row nsp-label">
+                  <input type="checkbox" name="comment-remember" id="comment-remember">
+                  <label for="comment-remember">Remember me</label>
+                </div>
+                <button type="submit" class="nsp-btn">Send comment</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- end single-product__reviews -->
+        <!-- begin single-product__related-product -->
+        <div class="single-product__related-product">
+          <h2>Related Products</h2>
+          <div class="splide" data-splide='{ "type": "loop", "perPage": 4, "breakpoints": { "990": {"perPage": 2}, "560": {"perPage": 1} } }'>
+            <div class="splide__track">
+              <ul class="splide__list">
+                {% import "macro/loop-product.html" as loopProduct %}
+                {% for product in products %}
+                <li class="splide__slide">
+                  {{ loopProduct.template(product) }}
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- end single-product__related-product -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end single-product -->
+
+{% endblock %}

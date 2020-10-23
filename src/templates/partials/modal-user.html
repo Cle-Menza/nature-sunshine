@@ -1,0 +1,99 @@
+<div id="modal-user" aria-hidden="true" class="modal modal-side">
+  <div tabindex="-1" data-modal-close class="modal__overlay">
+    <div role="dialog" class="modal__container">
+      <header>
+        <h4>My Account</h4>
+        <button data-modal-close class="modal__close"></button>
+      </header>
+      <div class="modal__content">
+        <h6>Login</h6>
+        {% import "macro/form.html" as form %}
+        {{
+          form.template({
+            "action": "/my-account.html",
+            "method": "post",
+            "submit": "Log in",
+            "forgot": true,
+            "row": [
+              {
+                "id": "modal-login-username",
+                "type": "text",
+                "label": "Username or Email",
+                "class": "login-username",
+                "required": true
+              },
+              {
+                "id": "modal-login-password",
+                "type": "password",
+                "label": "Password",
+                "class": "login-password",
+                "required": true
+              },
+              {
+                "id": "modal-login-remember",
+                "type": "checkbox",
+                "label": "Remember me",
+                "class": "login-remember nsp-label"
+              }
+            ]
+          })
+        }}
+
+        <h6>Register</h6>
+        {{
+          form.template({
+            "action": "/my-account.html",
+            "method": "post",
+            "submit": "Register",
+            "row": [
+              {
+                "id": "modal-register-username",
+                "type": "text",
+                "label": "Username",
+                "class": "register-username",
+                "required": true
+              },
+              {
+                "id": "modal-register-firstname",
+                "type": "text",
+                "label": "First name",
+                "class": "modal-register-firstname",
+                "required": true
+              },
+              {
+                "id": "modal-register-lastname",
+                "type": "text",
+                "label": "Last name",
+                "class": "modal-register-lastname",
+                "required": true
+              },
+              {
+                "id": "modal-register-email",
+                "type": "email",
+                "label": "Email",
+                "class": "register-email",
+                "required": true
+              },
+              {
+                "id": "modal-register-phone",
+                "type": "tel",
+                "label": "Phone",
+                "class": "modal-register-phone",
+                "required": true
+              },
+              {
+                "id": "modal-register-password",
+                "type": "password",
+                "label": "Password",
+                "class": "register-password",
+                "required": true
+              }
+            ]
+          })
+        }}
+      </div>
+      <footer>
+      </footer>
+    </div>
+  </div>
+</div>

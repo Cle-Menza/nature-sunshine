@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% import "macro/hero.html" as hero %}
+{{ 
+  hero.template({
+    "title": "Search results"
+  })
+}}
+
+<section class="search-results">
+  <div class="container">
+    <ul class="products column-4">
+      {% import "macro/loop-product.html" as loopProduct %}
+      {% for product in products %}
+      <li class="product">
+        {{ loopProduct.template(product, topics) }}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% endblock content %}

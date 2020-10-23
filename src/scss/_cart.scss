@@ -1,0 +1,150 @@
+.cart {
+  h1 {
+    color: $accent-text;
+  }
+
+  &__main {
+    display: flex;
+  }
+
+  &__table {
+    flex-grow: 1;
+
+    @extend %table;
+
+    .product-thumbnails {
+      width: 12%;
+    }
+
+    .product-name {
+      width: 32%;
+    }
+
+    .product-quantity {
+      width: 20%;
+    }
+
+    .product-subtotal {
+      width: 16%;
+    }
+
+    .product-variation {
+      width: 18%;
+    }
+
+    .cart_item {
+      @extend %cart_item;
+    }
+
+    .actions__btn {
+      display: flex;
+      align-items: center;
+
+      .return {
+        text-decoration: none;
+        color: $accent-text;
+        font-weight: 600;
+        margin-right: $gutter;
+      }
+
+      .button {
+        border: none;
+        background: none;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+        color: $accent-text;
+
+        &[name=clear_cart] {
+          color: $fail-color;
+        }
+
+        &[name=update_cart] {
+          font-weight: 800;
+        }
+      }
+
+      label {
+        display: none;
+      }
+
+      .coupon {
+        margin-right: auto;
+
+        input {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  &__summary {
+    align-self: flex-start;
+
+    .wc-proceed-to-checkout {
+      margin-bottom: $gutter;
+      margin-top: $gutter * 2;
+
+      a {
+        @extend %btn;
+
+        @extend %btn-primary;
+
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+    }
+
+    &-promo {
+      p {
+        margin-bottom: 5px;
+      }
+
+      h6 {
+        color: $accent-color;
+        font-size: 18px;
+      }
+
+      em {
+        font-size: 12px;
+      }
+    }
+
+    flex: 1 0 35%;
+    min-width: 300px;
+    max-width: 450px;
+    margin-left: $gutter;
+    padding: $gutter * 2;
+    background-color: $light-color;
+
+    tr,
+    td,
+    th,
+    table {
+      border: none;
+      font-weight: inherit;
+      padding: ($gutter / 2) 0;
+      text-transform: uppercase;
+      color: $accent-text;
+    }
+
+    th {
+      text-align: left;
+    }
+
+    td {
+      text-align: right;
+    }
+
+    .cart-subtotal {
+      font-size: 22px;
+    }
+
+    .order-total {
+      font-size: 28px;
+      font-weight: 600;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="icon" href="./assets/img/favicon/favicon.ico" sizes="16x16" type="image/x-icon">
+  <link rel="apple-touch-icon-precomposed" href="./assets/img/favicon/apple-icon-180-180.png" sizes="180x180">
+
+  <title>NSP25 Moldova</title>
+  
+	<link rel="stylesheet" href="./assets/css/main.min.css">
+</head>
+
+<body>
+  {% include "partials/header.html" %}
+  <article id="content" class="site-content">
+    {% block content %}
+    {% endblock %}
+  </article>  
+
+  {% include "partials/footer.html" %}
+  <script src="./assets/js/scripts.min.js"></script>
+
+  {% include "partials/modal.html" %}
+  {% include "partials/modal-cart.html" %}
+  {% include "partials/modal-user.html" %}
+  {% include "partials/sprite.html" %}
+  {% include "sprite/symbol.svg" %}
+  
+</body>
+</html>

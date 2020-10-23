@@ -1,0 +1,13 @@
+.row {
+  display: flex;
+
+  .column {
+    flex-basis: 0;
+    flex-grow: 1;
+    margin-bottom: 2%;
+
+    &:not(:last-child) {
+      margin-right: 5%;
+    }
+  }
+}

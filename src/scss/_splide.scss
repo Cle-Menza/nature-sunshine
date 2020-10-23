@@ -1,0 +1,55 @@
+.splide__arrow {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $light-color;
+  font-size: 20px;
+  line-height: 1;
+  padding: 0;
+  opacity: 0.75;
+  border: 2px solid $light-color;
+  color: $dark-text;
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.25;
+  }
+
+  svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+  }
+
+  &:hover {
+    opacity: 1;
+    background-color: #fff;
+    color: $accent-text;
+  }
+
+  &--prev {
+    left: 0;
+  }
+
+  &--next {
+    right: 0;
+  }
+}
+
+.splide__slide {
+  display: flex;
+}
+
+.splide--nav > .splide__track > .splide__list > .splide__slide {
+  border: 1px solid transparent;
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.splide--nav > .splide__track > .splide__list > .splide__slide.is-active {
+  border-color: $accent-text;
+  opacity: 1;
+}

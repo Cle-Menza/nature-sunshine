@@ -1,0 +1,26 @@
+{% macro template(settings={}) %}
+<section class="hero dark">
+  <div class="hero__bg">
+    <img src="./assets/img/hero-bg.jpg" alt="Title">
+  </div>
+  <div class="container">
+    <div class="hero__row">
+      {% if settings.title %}
+      <h1>{{ settings.title }}</h1>
+      {% endif %}
+      {% if settings.subTitle %}
+      <h2>{{ settings.subTitle }}</h2>
+      {% endif %}
+      {% if settings.promo %}
+      <b>{{ settings.promo }}</b>
+      {% endif %}
+      {% if settings.text %}
+      <p>{{ settings.text }}</p>
+      {% endif %}
+      {% if settings.btn %}
+      <a href="/shop.html" class="nsp-btn-primary" data-modal="modal">{{ settings.btn }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endmacro %}

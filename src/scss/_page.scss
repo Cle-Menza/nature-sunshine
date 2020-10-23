@@ -1,0 +1,8 @@
+.page {
+  &__title {
+    text-align: center;
+    padding-right: $gutter;
+    padding-left: $gutter;
+    color: $accent-text;
+  }
+}

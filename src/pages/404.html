@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  {% import "macro/hero.html" as hero %}
+  {{ 
+  hero.template({
+    "title": "404 Not found"
+  })
+}}
+
+{% endblock content %}

@@ -1,0 +1,174 @@
+{
+  "products": [
+    { 
+      "title": "SUPER OMEGA-3 EPA",
+      "img": "./assets/img/product-omega3.png",
+      "price": "33.30",
+      "addPrice:": "26.60",
+      "new": true
+    },
+    { 
+      "title": "FLAX SEEDOIL W/ LIGNANS",
+      "img": "./assets/img/product-flax.png",
+      "price": "26.60",
+      "addPrice:": "21.25",
+      "sale": true,
+      "salePrice": "24.40"
+    },
+    { 
+      "title": "LECITHIN",
+      "img": "./assets/img/product-lecithin.png",
+      "price": "25.15",
+      "addPrice:": "20.10",
+      "best": true
+    },
+    { 
+      "title": "WOMEN'S DHEA-F",
+      "img": "./assets/img/product-dhea.png",
+      "price": "40.35",
+      "addPrice:": "32.25",
+      "new": true,
+      "best": true
+    }
+  ],
+  "topics": [
+    {
+      "title": "Energy",
+      "svgUse": "#sprite-energy"
+    },
+    {
+      "title": "Sleep",
+      "svgUse": "#sprite-sleep"
+    },
+    {
+      "title": "Stress & Relax",
+      "svgUse": "#sprite-stress-relax"
+    },
+    {
+      "title": "Hair, skin, nails",
+      "svgUse": "#sprite-hair-skin-nails"
+    },
+    {
+      "title": "Gut & Digestion",
+      "svgUse": "#sprite-gut-digestion"
+    },
+    {
+      "title": "Heart Health",
+      "svgUse": "#sprite-heart-health"
+    },
+    {
+      "title": "Detox & Cleansing",
+      "svgUse": "#sprite-detox-cleansing"
+    },
+    {
+      "title": "Fitness",
+      "svgUse": "#sprite-fitness"
+    },
+    {
+      "title": "Weight Management",
+      "svgUse": "#sprite-weight-management"
+    },
+    {
+      "title": "Women's Health",
+      "svgUse": "#sprite-womens-health"
+    },
+    {
+      "title": "Prenatal",
+      "svgUse": "#sprite-prenatal"
+    },
+    {
+      "title": "Seasonal Support",
+      "svgUse": "#sprite-seasonal-support"
+    },
+    {
+      "title": "Mood",
+      "svgUse": "#sprite-mood"
+    },
+    {
+      "title": "Children's Health",
+      "svgUse": "#sprite-childrens-health"
+    },
+    {
+      "title": "Aches & Pains",
+      "svgUse": "#sprite-aches-pains"
+    },
+    {
+      "title": "Memory & Brain",
+      "svgUse": "#sprite-memory-brain"
+    },
+    {
+      "title": "Men's Health",
+      "svgUse": "#sprite-mens-health"
+    },
+    {
+      "title": "Eye Support",
+      "svgUse": "#sprite-eye-support"
+    },
+    {
+      "title": "Immune",
+      "svgUse": "#sprite-immune"
+    },
+    {
+      "title": "Bone & Joint",
+      "svgUse": "#sprite-bone-joint"
+    },
+    {
+      "title": "Blood Sugar",
+      "svgUse": "#sprite-blood-sugar"
+    },
+    {
+      "title": "Body Systems",
+      "svgUse": "#sprite-body-systems"
+    }
+  ],
+  "categories": [
+    {
+      "title": "Antioxidants"
+    },
+    {
+      "title": "Ayurvedics"
+    },
+    {
+      "title": "Children’s Health"
+    },
+    {
+      "title": "Essential Fatty Acids"
+    },
+    {
+      "title": "Essential Oils"
+    },
+    {
+      "title": "Gut & Digestive"
+    },
+    {
+      "title": "Herbs & Botanicals"
+    },
+    {
+      "title": "Men’s Health"
+    },
+    {
+      "title": "Probiotics"
+    },
+    {
+      "title": "Protein Powders"
+    },
+    {
+      "title": "Skin & Personal Care"
+    },
+    {
+      "title": "Sports Nutrition"
+    },
+    {
+      "title": "Super Foods"
+    },
+    {
+      "title": "Traditional Chinese Medicine"
+    },
+    {
+      "title": "Vitamins & Minerals"
+    },
+    {
+      "title": "Weight Management"
+    }
+  ]
+}

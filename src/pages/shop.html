@@ -1,0 +1,189 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% import "macro/hero.html" as hero %}
+
+{{ 
+  hero.template({
+    "title": "Essential Fatty Acids",
+    "text": "Essential fatty acids (EFAs) are found in fish and in some plants. They’re really beneficial for both heart and brain health. Since your body can’t make them, you have to get them in your diet or in supplements."
+  }) 
+}}
+
+<section class="shop">
+  <div class="container">
+    <div class="shop-categories">
+      <ul>
+        {% set activeCat = 5 %}
+        {% for cat in categories %}
+          <li {% if loop.index == activeCat %}class="active" {% endif %}><a href="/shop.html">{{ cat.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <form action="/shop.html" method="GET">
+      <div class="shop-main">
+        <div class="shop-filter">
+          <div class="shop-filter__group">
+            <div class="shop-filter__group-title" data-filter-collapse="-">
+              <h3>Concerns</h3>
+            </div>
+            <div class="shop-filter__group-list">
+              <ul>
+                <li class="nsp-label">
+                  <input type="checkbox" name="concerns" id="filter1" value="Essential Fatty Acids Fish">
+                  <label for="filter1">Essential Fatty Acids Fish <span>(4)</span></label>
+                </li>
+                <li class="nsp-label">
+                  <input type="checkbox" name="concerns" id="filter2" value="Essential Fatty Acids Plant">
+                  <label for="filter2">Essential Fatty Acids Plant <span>(2)</span></label>
+                </li>
+              </ul>
+            </div>
+            <div class="shop-filter__group-reset">
+              <button type="button" data-reset-filter>Clear</button>
+            </div>
+          </div>
+
+          <div class="shop-filter__group">
+            <div class="shop-filter__group-title" data-filter-collapse="-">
+              <h3>PRODUCT FORM</h3>
+            </div>
+            <div class="shop-filter__group-list">
+              <ul>
+                <li class="nsp-label">
+                  <input type="radio" name="product_form" id="filter3" value="Capsules">
+                  <label for="filter3">Capsules <span>(1)</span></label>
+                </li>
+                <li class="nsp-label">
+                  <input type="radio" name="product_form" id="filter4" value="Liquid">
+                  <label for="filter4">Liquid <span>(1)</span></label>
+                </li>
+                <li class="nsp-label">
+                  <input type="radio" name="product_form" id="filter5" value="Softgel capsules">
+                  <label for="filter5">Softgel capsules <span>(1)</span></label>
+                </li>
+              </ul>
+            </div>
+            <div class="shop-filter__group-reset">
+              <button type="button" data-reset-filter>Clear</button>
+            </div>
+          </div>
+
+          <div class="shop-filter__group">
+            <div class="shop-filter__group-title" data-filter-collapse="-">
+              <h3>BY DIET</h3>
+            </div>
+            <div class="shop-filter__group-list">
+              <ul>
+                <li class="nsp-label">
+                  <input type="checkbox" name="diet" id="filter6" value="Kosher">
+                  <label for="filter6">Kosher <span>(1)</span></label>
+                </li>
+              </ul>
+            </div>
+            <div class="shop-filter__group-reset">
+              <button type="button" data-reset-filter>Clear</button>
+            </div>
+          </div>
+
+          <div class="shop-filter__group">
+            <div class="shop-filter__group-title" data-filter-collapse="-">
+              <h3>PRICING</h3>
+            </div>
+            <div class="shop-filter__group-list">
+              <ul>
+                <li class="nsp-label">
+                  <input type="radio" name="pricing" id="filter7" value="less_30">
+                  <label for="filter7">Less than $30 <span>(2)</span></label>
+                </li>
+                <li class="nsp-label">
+                  <input type="radio" name="pricing" id="filter8" value="less_40">
+                  <label for="filter8">Less than $40 <span>(6)</span></label>
+                </li>
+                <li class="nsp-label">
+                  <input type="radio" name="pricing" id="filter9" value="less_50">
+                  <label for="filter9">Less than $50 <span>(7)</span></label>
+                </li>
+                <li class="nsp-label">
+                  <input type="radio" name="pricing" id="filter10" value="less_100">
+                  <label for="filter10">Less than $100 <span>(8)</span></label>
+                </li>
+              </ul>
+            </div>
+            <div class="shop-filter__group-reset">
+              <button type="button" data-reset-filter>Clear</button>
+            </div>
+          </div>
+
+        </div>
+        <!-- begin shop-products -->
+        <div class="shop-products">
+          <!-- begin shop-products__before -->
+          <div class="shop-products__before">
+            <div class="breadcrumb">
+              <ul>
+                <li>Shop</li>
+                <li>Product Categories</li>
+                <li>Essential Fatty Acids</li>
+              </ul>
+            </div>
+
+            <div class="shop-products__count">
+              8 Results
+            </div>
+
+            <div class="shop-products__sortby">
+              <select name="sortby" id="sortby">
+                <option value="top_sellers">Top sellers</option>
+                <option value="az">A - Z</option>
+                <option value="price">Price - low to high</option>
+              </select>
+            </div>
+          </div>
+          <!-- end shop-products__before -->
+
+          <!-- begin products -->
+          <ul class="products column-3">
+            {% import "macro/loop-product.html" as loopProduct %}
+            {% for product in products %}
+            <li class="product">
+              {{ loopProduct.template(product, topics) }}
+            </li>
+            {% endfor %}
+          </ul>
+          <!-- end products -->
+
+          <!-- begin shop-products__after -->
+          <div class="shop-products__after">
+            <!-- begin shop-products__pagination -->
+            <div class="shop-products__pagination">
+              <ul>
+                <li class="active"><span>1</span></li>
+                <li><a href="/shop.html">2</a></li>
+              </ul>
+            </div>
+            <!-- end shop-products__pagination -->
+            <!-- begin shop-products__per-page -->
+            <div class="shop-products__per-page">
+              <span>Results Per Page: </span>
+              <input type="radio" name="per_page" value="9" id="per_page_9">
+              <input type="radio" name="per_page" value="12" id="per_page_12">
+              <input type="radio" name="per_page" value="15" id="per_page_15">
+              <input type="radio" name="per_page" value="18" id="per_page_18">
+              <label class="active" for="per_page_9">9</label>
+              <label for="per_page_12">12</label>
+              <label for="per_page_15">15</label>
+              <label for="per_page_18">18</label>
+            </div>
+            <!-- end shop-products__per-page -->
+          </div>
+          <!-- end shop-products__after -->
+        </div>
+        <!-- end shop-products -->
+      </div>
+    </form>
+  </div>
+</section>
+
+{% endblock content %}

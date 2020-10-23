@@ -1,0 +1,52 @@
+.my-account {
+  &__main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__login,
+  &__register,
+  &__forgot {
+    flex: 1 0 0;
+    margin-bottom: 2%;
+    padding: $gutter * 2;
+
+    &:not(:last-child) {
+      margin-right: 5%;
+    }
+
+    button[type=submit] {
+      @extend %btn;
+
+      @extend %btn-primary;
+    }
+
+    h2 {
+      color: $dark-text;
+    }
+
+    input {
+      padding: $gutter ($gutter * 2);
+    }
+  }
+
+  &__login {
+    background-color: $light-color;
+  }
+
+  &__forgot {
+    background-color: $light-color;
+
+    h2 {
+      color: $accent-text;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    form {
+      max-width: 480px;
+    }
+  }
+}

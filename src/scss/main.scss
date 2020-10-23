@@ -1,0 +1,39 @@
+@import "vars";
+@import "fonts";
+@import "extend";
+
+// Include css reset
+@import "../../node_modules/reset-css/sass/reset";
+
+@import "../../node_modules/@splidejs/splide/dist/css/splide.min";
+
+// Include bootstart grid and reboot
+// @import ../../node_modules/bootstrap/scss/bootstrap-reboot
+// @import ../../node_modules/bootstrap/scss/bootstrap-grid
+
+@import "mixin";
+@import "base";
+@import "core";
+@import "core-block";
+@import "form";
+@import "micromodal";
+@import "splide";
+
+@import "header";
+@import "hero";
+@import "footer";
+@import "home";
+@import "menu";
+@import "shop";
+@import "breadcrumbs";
+@import "product-loop";
+@import "product-single";
+@import "page";
+@import "my-account";
+@import "cart";
+@import "checkout";
+
+@import "modal-cart";
+@import "modal-user";
+
+@import "test";

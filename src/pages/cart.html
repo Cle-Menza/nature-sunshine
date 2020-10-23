@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% set transparent = "no-transparent" %}
+{% set hasHero = "no-hero" %}
+
+{% block content %}
+
+<section class="cart">
+  <div class="container">
+    <h1>Shopping Cart</h1>
+    <div class="cart__main">
+      <div class="cart__table">
+        <form action="/cart.html" method="post">
+          <table>
+            <thead>
+              <tr>
+                <th class="product-thumbnails"></th>
+                <th class="product-name">Product Name</th>
+                <th class="product-variation">Product Form</th>
+                <th class="product-quantity">Quantity</th>
+                <th class="product-subtotal">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% set subtotal = 0 %}
+              {% for product in products %}
+              <tr class="cart_item">
+                <td class="product-thumbnails">
+                  <a href="/product.html" class="img">
+                    <img src="{{ product.img }}" alt="{{ product.title }}" title="{{ product.title }}">
+                  </a>
+                </td>
+                <td class="product-name">
+                  <div class="description">
+                    <a href="/product.html" class="title">
+                      {{ product.title }}
+                    </a>
+                    <span class="sku">
+                      No. 1514
+                    </span>
+                    <a href="/shop.html" class="remove">Remove</a>
+                  </div>
+                </td>
+                <td class="product-variation">
+                  <span class="variation">
+                    60 Capsules
+                  </span>
+                </td>
+                <td class="product-quantity">
+                  <div class="qty" data-qty>
+                    <button class="qty__dec" type="button" data-qty-minus>&minus;</button>
+                    <input type="text" value="1" min="1" max="99">
+                    <button class="qty__inc" type="button" data-qty-plus>&plus;</button>
+                  </div>
+                </td>
+                <td class="product-subtotal"><span class="price">{{ product.price }} $</span></td>
+              </tr>
+              {% set subtotal = subtotal + product.price | float %}
+              {% endfor %}
+              <tr>
+                <td class="actions" colspan="5">
+                  <div class="actions__btn">
+                    <a class="return" href="/shop.html">
+                      <svg class="icon">
+                        <use xlink:href="#left"></use>
+                      </svg>
+                      Keep shoping
+                    </a>
+                    <div class="coupon">
+                      <label for="coupon_code">Coupon:</label>
+                      <input type="text" name="coupon_code" class="input-text" id="coupon_code" value=""
+                        placeholder="Coupon code">
+                      <button type="submit" class="button" name="apply_coupon" value="Apply coupon">Apply
+                        coupon</button>
+                    </div>
+                    <button type="submit" class="button" name="clear_cart" value="Clear cart">Clear cart</button>
+                    <button type="submit" class="button" name="update_cart" value="Update cart">Update cart</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+      <div class="cart__summary">
+        <div class="cart_totals">
+          <table class="shop_table">
+            <tbody>
+              <tr class="cart-subtotal">
+                <th>Subtotal:</th>
+                <td data-title="Subtotal:"><span>{{ subtotal }} $</span></td>
+              </tr>
+              <tr class="order-total">
+                <th>Total:</th>
+                <td data-title="Total"><span>{{ subtotal }} $</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="wc-proceed-to-checkout">
+            <a href="/checkout.html" class="checkout-button">
+              Checkout
+            </a>
+          </div>
+          <div class="cart__summary-promo">
+            <h6>Free Shipping on Orders of $150 or More</h6>
+            <p><em><span class="asterix">*</span>Taxes will be calculated at checkout</em></p>
+            <p><em><span class="asterix">*</span>Shipping will be calculated at checkout</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

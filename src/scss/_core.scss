@@ -1,0 +1,49 @@
+@for $i from 1 through 6 {
+  h#{$i} {
+    &.nsp-title-dark,
+    &.nsp-title-white {
+      font-size: 48px;
+      line-height: 1.25em;
+      margin-bottom: $gutter;
+    }
+
+    &.nsp-title-dark {
+      color: $accent-text;
+    }
+
+    &.nsp-title-white {
+      color: $light-text;
+    }
+  }
+}
+
+.asterix {
+  font-style: normal;
+  top: 0.2em;
+  position: relative;
+  padding-right: 2px;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  display: inline-flex;
+  vertical-align: -0.125em;
+}
+
+.nsp-btn {
+  @extend %btn;
+}
+
+.nsp-btn-primary {
+  @extend %btn;
+
+  @extend %btn-primary;
+}
+
+.container {
+  max-width: 1296px + $gutter;
+  padding: 0 $gutter;
+  margin: 0 auto;
+}

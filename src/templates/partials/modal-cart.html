@@ -1,0 +1,39 @@
+<div id="modal-cart" aria-hidden="true" class="modal modal-side">
+  <div tabindex="-1" data-modal-close class="modal__overlay">
+    <div role="dialog" class="modal__container">
+      <header>
+        <h4>Cart</h4>
+        <button data-modal-close class="modal__close"></button>
+      </header>
+      <div class="modal__content">
+        <ul>
+          {% set subtotal = 0 %}
+          {% for product in products %}
+          <li>
+            <a href="#" class="remove">×</a>
+            <a href="/product.html" class="img">
+              <img src="{{ product.img }}" alt="{{ product.title }}" title="{{ product.title }}">
+            </a>
+            <div class="cart-item">
+              <a href="/product.html" class="title">{{ product.title }}</a>
+              <span class="quanlity">1 x {{ product.price }} $</span>
+            </div>
+          </li>
+          {% set subtotal = subtotal + product.price | float %}
+          {% endfor %}
+        </ul>
+        <div class="cart-total">
+          <strong>Subtotal:</strong>
+          <span>{{ subtotal }} $</span>
+        </div>
+      </div>
+      <div class="promo">
+        Save up to 20% on this order
+      </div>
+      <footer>
+        <a href="/checkout.html" class="nsp-btn-primary">Go to checkout</a>
+        <a href="/cart.html" class="nsp-btn">Go to cart</a>
+      </footer>
+    </div>
+  </div>
+</div>

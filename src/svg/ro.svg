@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="332px" viewBox="0 0 512 332" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="belgium" fill-rule="nonzero">
+            <path d="M170.667,0.839 L16.516,0.839 L10.484,17.355 L10.484,307.151 C10.484,316.272 17.879,323.667 27,323.667 L170.667,323.667 L189.936,306.384 L189.936,25.616 L170.667,0.839 Z" id="Path" fill="#0D337F"></path>
+            <path d="M341.333,323.5 L495.484,323.5 L512,314.645 L512,17.355 C512,8.234 504.605,0.839 495.484,0.839 L341.333,0.839 L322.064,25.617 L322.064,306.385 L341.333,323.5 Z" id="Path" fill="#CE3A4A"></path>
+            <path d="M512,314.645 L328.489,314.645 L341.333,331.161 L495.484,331.161 C504.605,331.161 512,323.767 512,314.645 Z" id="Path" fill="#CE1126"></path>
+            <path d="M16.516,265.097 L16.516,0.839 C7.395,0.839 0,8.233 0,17.355 L0,314.645 C0,323.767 7.395,331.161 16.516,331.161 L170.667,331.161 L183.511,314.645 L66.065,314.645 C38.7,314.645 16.516,292.462 16.516,265.097 Z" id="Path" fill="#002B7F"></path>
+            <polygon id="Path" fill="#FCDD56" points="187.333 323.667 328.333 323.667 341.333 314.645 341.333 0.839 170.667 0.839 170.667 314.645"></polygon>
+            <polygon id="Path" fill="#FCD116" points="170.667 314.645 341.333 314.645 341.333 331.161 170.667 331.161"></polygon>
+        </g>
+    </g>
+</svg>

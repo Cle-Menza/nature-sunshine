@@ -1,0 +1,118 @@
+<div class="pre-header">
+  <div class="container">
+    <div class="pre-header__row">
+      <span>Free Shipping on orders over $150</span>
+    </div>
+  </div>
+</div>
+
+<header id="main-header" class="main-header {{ transparent }} {{ hasHero }}">
+  <div class="container">
+    <div class="main-header__row">
+
+      <div class="main-header__logo">
+        <a href="/">
+          <svg class="icon" width="141" height="43">
+            <use xlink:href="#logo"></use>
+          </svg>
+        </a>
+      </div>
+
+      <nav class="main-header__nav">
+
+        <ul class="main-header__menu">
+          <li><a href="/shop.html">Shop</a></li>
+          <li class="mega-menu">
+            <a href="/shop.html">Health topics</a>
+            <div class="mega-menu__container">
+              <ul>
+              {% for item in topics %}
+                <li>
+                  <a href="/shop.html">
+                    <svg class="nsp-icon">
+                      <use xlink:href="{{ item.svgUse }}"></use>
+                    </svg>
+                    <span>{{ item.title }}</span>
+                  </a>
+                </li>
+              {% endfor %}
+              </ul>
+            </div>
+          </li>
+          <li><a href="/text-page.html">Learn</a></li>
+          <li><a href="/text-page-bg.html">Your jorney</a></li>
+          <li class="dropdown-menu">
+            <a href="/text-page.html">Share</a>
+            <div class="dropdown-menu__container">
+              <ul>
+                {% for cat in categories %}
+                  <li><a href="/shop.html">{{ cat.title }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <div class="main-header__search">
+          <form action="/search.html" method="GET">
+            <input type="text" name="s" placeholder="Search...">
+            <button type="submit">
+              <svg class="icon">
+                <use xlink:href="#search"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <div class="main-header__lang">
+          <a href="/" class="main-header__lang-link">
+            <svg class="icon">
+              <use xlink:href="#usa"></use>
+            </svg>
+          </a>
+
+          <div class="main-header__lang-menu">
+            <h6>SELECT YOUR LANGUAGE</h6>
+            <ul>
+              <li>
+                <a href="/ro/">
+                  <svg class="icon">
+                    <use xlink:href="#ro"></use>
+                  </svg>
+                  <span>Romania</span>
+                </a>
+              </li>
+              <li>
+                <a href="/">
+                  <svg class="icon">
+                    <use xlink:href="#ru"></use>
+                  </svg>
+                  <span>Russian</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="main-header__cart">
+          <a href="/cart.html" class="main-header__cart-link" data-modal="modal-cart">
+            <svg class="icon">
+              <use xlink:href="#bag"></use>
+            </svg>
+          </a>
+        </div>
+
+        <div class="main-header__user">
+          <a href="/my-account.html" class="main-header__user-link" data-modal="modal-user">
+            <svg class="icon">
+              <use xlink:href="#user-reg"></use>
+            </svg>
+          </a>
+        </div>
+
+      </nav>
+
+    </div>
+  </div>
+</header>

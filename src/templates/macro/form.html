@@ -1,0 +1,41 @@
+{% macro template(config) %}
+
+<form action="{{ config.action }}" method="{{ config.method }}">
+  {% if config.wrapper %}
+  <div class="form__wrapper">
+  {% endif %}
+  {% for row in config.row %}
+    <div class="{{ row.class }} form-row">
+      {% if row.type === "select" and row.option %}
+        <select name="{{ row.id }}" id="{{ row.id }}">
+          {% for option in row.option %}
+            <option value="{{ option }}">{{ option }}</option>
+          {% endfor %}
+        </select>
+      {% elif row.type === "textarea" %}
+        <textarea name="{{ row.id }}" id="{{ row.id }}" cols="30" rows="10"></textarea>
+      {% else %}
+        <input type="{{ row.type }}" name="{{ row.id }}" id="{{ row.id }}">
+      {% endif %}
+        <label for="{{ row.id }}">
+          {{ row.label }}
+          {% if row.required %}
+            <abbr class="required">*</abbr>
+          {% endif %}
+        </label>
+    </div>
+  {% endfor %}
+  {% if config.forgot %}
+  <div class="form-row forgot-password">
+    <a href="/lost-password.html">Forgot your password?</a>
+  </div>
+  {% endif %}
+  {% if config.submit %}
+    <button type="submit">{{ config.submit }}</button>
+  {% endif %}
+  {% if config.wrapper %}
+  </div>
+  {% endif %}
+</form>
+
+{% endmacro %}
